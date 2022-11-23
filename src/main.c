@@ -243,7 +243,7 @@ int main(int argc, char *argv[])
 	printf("System Ready\n");
 
 	/* Create Application tasks */
-	os_task_create(httpclient_task, NULL, FALSE);
+	os_task_create(httpclient_task, "httptest", NULL, FALSE);
 
 	printf("System Initialization finished\n");
 
