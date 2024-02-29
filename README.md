@@ -1,4 +1,4 @@
-# Logicrom SDK - HTTP/HTTPS Client example
+# Logicrom OpenCPU SDK - HTTP/HTTPS Client example
 
 ## How to build
 

@@ -158,12 +158,12 @@ static void httpclient_task(void *arg)
 	int timeout = 60;
 	static const char json_data[] = "{\"string_key\":\"string value\",\"boolean_key\":true, \"int_key\":1234}";
 
-	while (timeout && !network_isready()) {
+	while (timeout && !network_isdataready()) {
 		sleep(1);
 		timeout--;
 	}
 
-	if (!network_isready()) {
+	if (!network_isdataready()) {
 		printf("Network ready timeout!");
 		return;
 	}
@@ -236,7 +236,7 @@ int main(int argc, char *argv[])
 	 */
 	logicrom_init(STDIO_PORT, urc_callback);
 	/* enable GPRS */
-	network_gprsenable(TRUE);
+	network_dataenable(TRUE);
 	/* for download test */
 	wget_init();
 	
